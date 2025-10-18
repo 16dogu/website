@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğu'nun Web Sitesi | 8 Yaşındayım</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Özelleştirilmiş Tailwind konfigürasyonu ve font */
+        :root {
+            --light-bg-color: #f3f4f6; /* Açık gri tonu */
+        }
+        
+        /* Tema Rengi: Açık Zemin, Arka Plan Ağaçlar */
+        body {
+            font-family: 'Inter', sans-serif; /* Sade yazı tipi */
+            background-color: var(--light-bg-color);
+            background-image: url('https://images.unsplash.com/photo-1549492167-27e1edc2e061?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+            /* Not: Bu, telifsiz bir ağaç/orman görselidir. Kendi görselini kullanabilirsin! */
+            background-attachment: fixed; /* Arka planın sabit kalması için */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* İçeriğin rahat okunması için yarı saydam beyaz katman */
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.9); /* Yarı saydam beyaz */
+            backdrop-filter: blur(2px); /* Hafif bulanıklık efekti */
+            min-height: 100vh;
+        }
+
+        /* Başlıklar ve butonlar için basit, modern bir stil */
+        .header-link:hover {
+            color: #10b981; /* Zümrüt yeşili vurgu */
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- İçerik Sarmalayıcı: Arka planı yarı saydam yapıyor -->
+    <div class="content-wrapper">
+
+        <!-- 1. HEADER (Başlık Çubuğu) -->
+        <header class="sticky top-0 z-50 bg-white/90 shadow-md">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+                <!-- Logo/Site Adı -->
+                <div class="text-2xl font-bold text-gray-800">
+                    <a href="#hero">🌳 Doğu'nun Dünyası</a>
+                </div>
+                <!-- Navigasyon Linkleri -->
+                <div class="space-x-4">
+                    <a href="#projeler" class="header-link text-gray-600 hover:text-green-600 transition duration-150">Projelerim</a>
+                    <a href="#scratch" class="header-link text-gray-600 hover:text-green-600 transition duration-150">Scratch Oyunlarım</a>
+                    <a href="#iletisim" class="header-link text-gray-600 hover:text-green-600 transition duration-150">İletişim</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 2. HERO BÖLÜMÜ -->
+            <section id="hero" class="py-20 md:py-32 text-center max-w-4xl mx-auto px-4">
+                <div class="bg-white/70 p-6 sm:p-10 rounded-xl shadow-2xl border-4 border-green-400">
+                    <span class="text-6xl mb-4 block animate-bounce">👋</span>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-gray-900 mb-4">
+                        Merhaba, Ben <span class="text-green-600">Doğu!</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-gray-700 font-medium">
+                        8 yaşındayım ve kodlamayı, özellikle de oyun yapmayı çok seviyorum. Bu benim ilk web sitem!
+                    </p>
+                    <a href="#projeler" class="mt-8 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105">
+                        Projelerimi Gör <span class="ml-2">→</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 3. PROJELERİM BÖLÜMÜ (3 Frame Şeklinde) -->
+            <section id="projeler" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                    🚀 En Yeni Projelerim
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Proje Frame 1: Robot Resmi -->
+                    <div class="card bg-white rounded-xl shadow-lg p-6 border-t-4 border-indigo-500">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                            <span class="text-2xl mr-2">🤖</span> Akıllı Robot Çizimi
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Bu projede, hayalimdeki robotu dijital ortamda çizdim. Kolları uzayabiliyor ve uçabiliyor!
+                        </p>
+                        <div class="h-32 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-500 font-bold">
+                            [Robot Çiziminin Placeholder Resmi]
+                        </div>
+                        <button onclick="showMessage('Robot projesi detayları yakında eklenecek!')" class="mt-4 w-full text-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                            Detayları İncele
+                        </button>
+                    </div>
+
+                    <!-- Proje Frame 2: Hikaye Kitabı -->
+                    <div class="card bg-white rounded-xl shadow-lg p-6 border-t-4 border-yellow-500">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                            <span class="text-2xl mr-2">📚</span> Uzay Macerası Hikayesi
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Kendi yazdığım ve resimlediğim kısa hikaye kitabım. Ana karakter bir uzay gemisi tamircisi.
+                        </p>
+                        <div class="h-32 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 font-bold">
+                            [Kitap Kapağı Placeholder Resmi]
+                        </div>
+                        <button onclick="showMessage('Hikaye kitabının tamamını okumak ister misin?')" class="mt-4 w-full text-center text-sm text-yellow-600 hover:text-yellow-800 font-medium">
+                            Bir Bölüm Oku
+                        </button>
+                    </div>
+                    
+                    <!-- Proje Frame 3: Model Uçak -->
+                    <div class="card bg-white rounded-xl shadow-lg p-6 border-t-4 border-red-500">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 flex items-center">
+                            <span class="text-2xl mr-2">✈️</span> Ahşap Model Uçak
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Babamla birlikte yaptığımız ahşap model uçak. Kanatlarını takıp boyamasını ben yaptım.
+                        </p>
+                        <div class="h-32 bg-red-100 rounded-lg flex items-center justify-center text-red-600 font-bold">
+                            [Model Uçak Placeholder Resmi]
+                        </div>
+                        <button onclick="showMessage('Model yapımı aşamalarını gösteren fotoğraflar eklenecek.')" class="mt-4 w-full text-center text-sm text-red-600 hover:text-red-800 font-medium">
+                            Daha Fazla Fotoğraf
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. SCRATCH OYUNLARIM BÖLÜMÜ -->
+            <section id="scratch" class="py-16 bg-gray-50/70">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                        🎮 Scratch Oyunlarım
+                    </h2>
+                    <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+                        Kodlamayı Scratch ile öğrendim ve bir sürü eğlenceli oyun yaptım! En sevdiğim oyunlarımı burada paylaşacağım.
+                    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-xl border border-dashed border-green-300 inline-block">
+                        <p class="text-lg text-gray-600">
+                            Şu anda oyunlar yüklenecek ama Scratch profili linkime bakabilirsin:
+                        </p>
+                        <a href="#" target="_blank" class="mt-4 inline-flex items-center text-green-600 hover:text-green-800 font-bold text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                            Doğu'nun Scratch Sayfası
+                        </a>
+                        <p class="text-sm text-gray-500 mt-2">(Linke tıklayarak Scratch sayfama gidebilirsin.)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. İLETİŞİM BÖLÜMÜ -->
+            <section id="iletisim" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
+                    💌 İletişim
+                </h2>
+                <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-2xl border-2 border-yellow-400">
+                    <p class="text-center text-gray-700 mb-6">
+                        Bana mesaj göndermek veya bir şey sormak istersen, annemle/babamla iletişime geçebilirsin!
+                    </p>
+                    
+                    <form onsubmit="handleFormSubmit(event)">
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700">Adınız:</label>
+                            <input type="text" id="name" name="name" required 
+                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:border-green-500 focus:ring-green-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700">E-posta Adresiniz:</label>
+                            <input type="email" id="email" name="email" required 
+                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:border-green-500 focus:ring-green-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium text-gray-700">Mesajınız:</label>
+                            <textarea id="message" name="message" rows="4" required 
+                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:border-green-500 focus:ring-green-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition duration-150">
+                            Gönder
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Mesaj Kutusu (JS ile gösterilecek, alert yerine) -->
+        <div id="message-box" class="fixed top-0 left-0 w-full h-full bg-black/50 z-[9999] hidden items-center justify-center">
+            <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full text-center transform transition-all duration-300 scale-95" id="message-content">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Bilgilendirme</h3>
+                <p id="message-text" class="text-gray-700 mb-6"></p>
+                <button onclick="hideMessage()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg">
+                    Tamam
+                </button>
+            </div>
+        </div>
+        
+        <!-- 6. FOOTER (Alt Bölüm) -->
+        <footer class="bg-gray-800 text-white mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+                <p class="text-lg font-medium mb-2">
+                    © 2025 Doğu. Tüm Hakları Saklıdır.
+                </p>
+                <p class="text-sm text-gray-400">
+                    Kodlama ve Tasarım: Doğu (Yardımcı: Gemini)
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // JavaScript Fonksiyonları
+        
+        const messageBox = document.getElementById('message-box');
+        const messageText = document.getElementById('message-text');
+
+        // Form gönderimini ele alır (gerçek bir sunucuya göndermediği için simüle edilir)
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
+            
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+
+            // Form alanlarını temizle
+            event.target.reset();
+
+            // Kullanıcıya başarılı mesajı göster
+            showMessage(`Teşekkürler ${name}! Mesajın ( "${message.substring(0, 30)}..." ) iletildi. En kısa zamanda cevap vereceğim!`);
+        }
+
+        // alert() yerine kullanılan özel mesaj kutusunu gösterir
+        function showMessage(text) {
+            messageText.textContent = text;
+            messageBox.style.display = 'flex';
+        }
+
+        // Özel mesaj kutusunu gizler
+        function hideMessage() {
+            messageBox.style.display = 'none';
+        }
+
+        // Sayfa yüklendiğinde mesaj kutusunu gizler (başlangıçta görünmez olması için)
+        window.onload = function() {
+            hideMessage();
+        };
+
+        // Otomatik kaydırma fonksiyonu (navigasyon linkleri için daha yumuşak geçiş sağlar)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
